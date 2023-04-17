@@ -9,7 +9,7 @@ class U1(
         maxWeight: Float,
         chanceLaunchExplosion: Float,
         chanceLandingCrash: Float,
-    ) : Rocket(
+    ): Rocket(
         cost,
         weight,
         maxWeight,
