@@ -7,7 +7,7 @@ import interfaces.SpaceShip
  */
 open class Rocket(
         val cost: Float,
-        val weight: Float,
+        var weight: Float,
         val maxWeight: Float,
         var chanceLaunchExplosion: Float? = null,
         var chanceLandingCrash: Float? = null,
@@ -22,10 +22,10 @@ open class Rocket(
     }
 
     override fun canCarry(item: Item): Boolean {
-        TODO("Not yet implemented")
+        return (weight + item.weight) <= maxWeight
     }
 
     override fun carry(item: Item) {
-        TODO("Not yet implemented")
+        weight += item.weight
     }
 }
