@@ -9,8 +9,8 @@ open class Rocket(
         val cost: Float,
         val weight: Float,
         val maxWeight: Float,
-        val chanceLaunchExplosion: Float,
-        val chanceLandingCrash: Float,
+        var chanceLaunchExplosion: Float? = null,
+        var chanceLandingCrash: Float? = null,
     ): SpaceShip {
 
     override fun launch(): Boolean {
