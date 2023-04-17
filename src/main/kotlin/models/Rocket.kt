@@ -2,7 +2,7 @@ package models
 
 import interfaces.SpaceShip
 
-class Rocket: SpaceShip {
+open class Rocket: SpaceShip {
     override fun launch(): Boolean {
         return true
     }
