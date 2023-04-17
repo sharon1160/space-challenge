@@ -1,5 +1,7 @@
 package models
 
+import java.util.Random
+
 /**
  * This class represents the U-1 Rocket.
  */
@@ -23,7 +25,20 @@ class U1(
      * based on a random number using the probability equation.
      */
     override fun launch(): Boolean {
-        TODO("Not yet implemented")
+        // probability equation
+        chanceLaunchExplosion = 5 * (weight/maxWeight)
+
+        // random number between 1 and 100
+        val randomNumber = Random().nextInt(100) + 1
+
+        // True if the launch was successful
+        // otherwise, False
+        return if (chanceLaunchExplosion != null) {
+            chanceLaunchExplosion!! <  randomNumber
+        }
+        else {
+            false
+        }
     }
 
     /**
@@ -32,6 +47,19 @@ class U1(
      * the probability equation.
      */
     override fun land(): Boolean {
-        TODO("Not yet implemented")
+        // probability equation
+        chanceLandingCrash = 1 * (weight/maxWeight)
+
+        // random number between 1 and 100
+        val randomNumber = Random().nextInt(100) + 1
+
+        // True if the landing was successful
+        // otherwise, False
+        return if (chanceLandingCrash != null) {
+            chanceLandingCrash!! <  randomNumber
+        }
+        else {
+            false
+        }
     }
 }
