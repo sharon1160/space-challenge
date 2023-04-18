@@ -38,17 +38,18 @@ class Simulation {
 
         do {
             val rocket = U1()
-            for (i in pos..totalItems) {
+            for (i in pos..(totalItems - 1)) {
 
                 // When can carry
                 if (rocket.canCarry(itemsList[i])) {
                     rocket.carry(itemsList[i])
+                    pos = i
                 }
                 // When can't carry
                 else{
                     // If it's full
                     if (rocket.weight == rocket.maxWeight) {
-                        pos = i + 1
+                        pos = i
                         break
                     }
                     // If it's not full
@@ -77,17 +78,18 @@ class Simulation {
         do {
             val rocket = U2()
 
-            for (i in pos..totalItems) {
+            for (i in pos..(totalItems - 1)) {
 
                 // When can carry
                 if (rocket.canCarry(itemsList[i])) {
                     rocket.carry(itemsList[i])
+                    pos = i
                 }
                 // When can't carry
                 else{
                     // If it's full
                     if (rocket.weight == rocket.maxWeight) {
-                        pos = i + 1
+                        pos = i
                         break
                     }
                     // When it's not full
@@ -108,7 +110,7 @@ class Simulation {
         return u2Rockets
     }
 
-    private fun sendLaunch(rocket: Rocket): Float {
+    private fun <T : Rocket> sendLaunch(rocket: T): Float {
         var budget = 0.0f
         val rocketCost: Float = rocket.cost
 
@@ -123,7 +125,7 @@ class Simulation {
         return budget
     }
 
-    private fun sendLand(rocket: Rocket): Float {
+    private fun <T : Rocket> sendLand(rocket: T): Float {
         var budget = 0.0f
         val rocketCost: Float = rocket.cost
 
@@ -139,8 +141,7 @@ class Simulation {
     }
     fun <T : Rocket> runSimulation(rocketList: ArrayList<T>): Float {
         var totalBudget = 0.0f
-
-        for (rocket: Rocket in rocketList) {
+        for (rocket: T in rocketList) {
             totalBudget += sendLaunch(rocket)
             totalBudget += sendLand(rocket)
         }
