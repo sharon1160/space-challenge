@@ -38,8 +38,6 @@ class Main {
         val u1FleetPhase1: ArrayList<U1> = firstSimulation.loadU1(phase1Items)
         val u1FleetPhase2: ArrayList<U1> = firstSimulation.loadU1(phase2Items)
 
-        printFleet(u1FleetPhase1)
-
         // Running simulation for the two phases
         val u1TotalBudget1 = firstSimulation.runSimulation(u1FleetPhase1)
         val u1TotalBudget2 = firstSimulation.runSimulation(u1FleetPhase2)
