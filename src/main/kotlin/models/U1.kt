@@ -6,9 +6,9 @@ import java.util.Random
  * This class represents the U-1 Rocket.
  */
 class U1(
-        cost: Float,
-        weight: Float,
-        maxWeight: Float,
+        cost: Float = 100.0f,
+        weight: Float = 10.0f,
+        maxWeight: Float = 18.0f,
         chanceLaunchExplosion: Float,
         chanceLandingCrash: Float,
     ): Rocket(
@@ -26,7 +26,7 @@ class U1(
      */
     override fun launch(): Boolean {
         // probability equation
-        chanceLaunchExplosion = 5 * (weight/maxWeight)
+        chanceLaunchExplosion = 0.05f * (weight/maxWeight)
 
         // random number between 1 and 100
         val randomNumber = Random().nextInt(100) + 1
@@ -48,7 +48,7 @@ class U1(
      */
     override fun land(): Boolean {
         // probability equation
-        chanceLandingCrash = 1 * (weight/maxWeight)
+        chanceLandingCrash = 0.01f * (weight/maxWeight)
 
         // random number between 1 and 100
         val randomNumber = Random().nextInt(100) + 1

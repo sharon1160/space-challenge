@@ -6,9 +6,9 @@ import java.util.*
  * This class represents the U-2 Rocket.
  */
 class U2(
-        cost: Float,
-        weight: Float,
-        maxWeight: Float,
+        cost: Float = 120.0f,
+        weight: Float = 18.0f,
+        maxWeight: Float = 29.0f,
         chanceLaunchExplosion: Float,
         chanceLandingCrash: Float,
     ): Rocket(
@@ -26,7 +26,7 @@ class U2(
      */
     override fun launch(): Boolean {
         // probability equation
-        chanceLaunchExplosion = 4 * (weight/maxWeight)
+        chanceLaunchExplosion = 0.04f * (weight/maxWeight)
 
         // random number between 1 and 100
         val randomNumber = Random().nextInt(100) + 1
@@ -48,7 +48,7 @@ class U2(
      */
     override fun land(): Boolean {
         // probability equation
-        chanceLandingCrash = 8 * (weight/maxWeight)
+        chanceLandingCrash = 0.08f * (weight/maxWeight)
 
         // random number between 1 and 100
         val randomNumber = Random().nextInt(100) + 1
