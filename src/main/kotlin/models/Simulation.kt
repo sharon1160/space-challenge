@@ -55,7 +55,8 @@ class Simulation {
                     // If it's not full
                     else if (rocket.weight < rocket.maxWeight) {
                         val difference = rocket.maxWeight - rocket.weight
-                        rocket.weight += difference
+                        val partialItem = Item(itemsList[i].name, difference)
+                        rocket.carry(partialItem)
                         itemsList[i].decreaseWeight(difference)
                         pos = i
                         break
@@ -98,7 +99,8 @@ class Simulation {
                     // When it's not full
                     else if (rocket.weight < rocket.maxWeight) {
                         val difference = rocket.maxWeight - rocket.weight
-                        rocket.weight += difference
+                        val partialItem = Item(itemsList[i].name, difference)
+                        rocket.carry(partialItem)
                         itemsList[i].decreaseWeight(difference)
                         pos = i
                         break
