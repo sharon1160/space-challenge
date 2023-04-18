@@ -70,6 +70,9 @@ class Simulation {
         return u1Rockets
     }
 
+    /**
+     * Returns the ArrayList of those U2 rockets that are fully loaded.
+     */
     fun loadU2(itemsList: ArrayList<Item>): ArrayList<U2>{
         val totalItems = itemsList.size
         val u2Rockets: ArrayList<U2> = arrayListOf()
@@ -110,6 +113,9 @@ class Simulation {
         return u2Rockets
     }
 
+    /**
+     * Returns the total budget at launch
+     */
     private fun <T : Rocket> sendLaunch(rocket: T): Float {
         var budget = 0.0f
         val rocketCost: Float = rocket.cost
@@ -125,6 +131,9 @@ class Simulation {
         return budget
     }
 
+    /**
+     * Returns the total budget at land
+     */
     private fun <T : Rocket> sendLand(rocket: T): Float {
         var budget = 0.0f
         val rocketCost: Float = rocket.cost
@@ -139,6 +148,10 @@ class Simulation {
         }
         return budget
     }
+
+    /**
+     * Returns the total budget at lunch and land
+     */
     fun <T : Rocket> runSimulation(rocketList: ArrayList<T>): Float {
         var totalBudget = 0.0f
         for (rocket: T in rocketList) {
