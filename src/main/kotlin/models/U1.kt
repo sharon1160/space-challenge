@@ -9,8 +9,8 @@ class U1(
         cost: Float = 100.0f,
         weight: Float = 10.0f,
         maxWeight: Float = 18.0f,
-        chanceLaunchExplosion: Float,
-        chanceLandingCrash: Float,
+        chanceLaunchExplosion: Float? = null,
+        chanceLandingCrash: Float? = null,
     ): Rocket(
         cost,
         weight,
