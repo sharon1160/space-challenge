@@ -1,4 +1,5 @@
+import models.Main
 
 fun main() {
-    println("Hello world!")
+    Main().main()
 }
