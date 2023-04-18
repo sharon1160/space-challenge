@@ -5,7 +5,7 @@ import java.util.ArrayList
 class Main {
     fun main() {
 
-        // U1 simulation
+        // Simulation
 
         val firstSimulation = Simulation()
 
