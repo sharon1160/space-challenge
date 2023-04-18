@@ -5,9 +5,9 @@ package models
  */
 class Item (
             var name: String,
-            var weight: Float
+            var weight: Int
     ) {
-    fun decreaseWeight(difference: Float) {
+    fun decreaseWeight(difference: Int) {
         weight -= difference
     }
 }

@@ -6,9 +6,9 @@ import java.util.*
  * This class represents the U-2 Rocket.
  */
 class U2(
-        cost: Float = 120.0f,
-        weight: Float = 18.0f,
-        maxWeight: Float = 29.0f,
+        cost: Int = 120,
+        weight: Int = 18,
+        maxWeight: Int = 29,
         chanceLaunchExplosion: Float? = null,
         chanceLandingCrash: Float? = null,
     ): Rocket(

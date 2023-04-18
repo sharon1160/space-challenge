@@ -21,7 +21,7 @@ class Simulation {
         for (line in linesList) {
             val (name, weight) = line.split(separator)
             // Converting from kilograms to tons
-            val weightTons = (weight.toFloat())/1000
+            val weightTons = (weight.toInt())/1000
             val item = Item(name, weightTons)
             itemsList.add(item)
         }
@@ -118,7 +118,7 @@ class Simulation {
      */
     private fun <T : Rocket> sendLaunch(rocket: T): Float {
         var budget = 0.0f
-        val rocketCost: Float = rocket.cost
+        val rocketCost: Int = rocket.cost
 
         if (rocket.launch()) {
             budget += rocketCost
@@ -136,7 +136,7 @@ class Simulation {
      */
     private fun <T : Rocket> sendLand(rocket: T): Float {
         var budget = 0.0f
-        val rocketCost: Float = rocket.cost
+        val rocketCost: Int = rocket.cost
 
         if (rocket.land()) {
             budget += rocketCost

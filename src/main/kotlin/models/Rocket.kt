@@ -6,9 +6,9 @@ import interfaces.SpaceShip
  * This is a Rocket base class that can be inherited by classes U1 and U2.
  */
 open class Rocket(
-        val cost: Float,
-        var weight: Float,
-        val maxWeight: Float,
+        val cost: Int,
+        var weight: Int,
+        val maxWeight: Int,
         var chanceLaunchExplosion: Float? = null,
         var chanceLandingCrash: Float? = null,
     ): SpaceShip {

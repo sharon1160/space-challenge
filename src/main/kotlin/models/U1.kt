@@ -6,9 +6,9 @@ import java.util.Random
  * This class represents the U-1 Rocket.
  */
 class U1(
-        cost: Float = 100.0f,
-        weight: Float = 10.0f,
-        maxWeight: Float = 18.0f,
+        cost: Int = 100,
+        weight: Int = 10,
+        maxWeight: Int = 18,
         chanceLaunchExplosion: Float? = null,
         chanceLandingCrash: Float? = null,
     ): Rocket(
