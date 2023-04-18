@@ -123,7 +123,7 @@ class Simulation {
         val rocketCost: Int = rocket.cost
 
         if (rocket.launch()) {
-            budget += rocketCost
+            return budget
         }
         else {
             while (!rocket.launch()) {
@@ -141,7 +141,7 @@ class Simulation {
         val rocketCost: Int = rocket.cost
 
         if (rocket.land()) {
-            budget += rocketCost
+            return budget
         }
         else {
             while (!rocket.land()) {
@@ -157,6 +157,7 @@ class Simulation {
     fun <T : Rocket> runSimulation(rocketList: ArrayList<T>): Float {
         var totalBudget = 0.0f
         for (rocket: T in rocketList) {
+            totalBudget += rocket.cost
             totalBudget += sendLaunch(rocket)
             totalBudget += sendLand(rocket)
         }
