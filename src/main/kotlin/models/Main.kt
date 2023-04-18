@@ -3,6 +3,24 @@ package models
 import java.util.ArrayList
 
 class Main {
+
+    /**
+     * This function prints a fleet of rockets with their items
+     */
+    fun <T : Rocket> printFleet(fleet: ArrayList<T>) {
+        var i = 1
+        for (rocket: T in fleet) {
+            println("Rocket #$i")
+            var j = 1
+            for (item: Item in rocket.itemsList) {
+                println("Item #$j name: ${item.name}")
+                println("Item #$j weight: ${item.weight}")
+                j += 1
+            }
+            i += 1
+            println()
+        }
+    }
     fun main() {
 
         /* SIMULATION */
@@ -19,6 +37,8 @@ class Main {
         // Loading U1 rockets
         val u1FleetPhase1: ArrayList<U1> = firstSimulation.loadU1(phase1Items)
         val u1FleetPhase2: ArrayList<U1> = firstSimulation.loadU1(phase2Items)
+
+        printFleet(u1FleetPhase1)
 
         // Running simulation for the two phases
         val u1TotalBudget1 = firstSimulation.runSimulation(u1FleetPhase1)
