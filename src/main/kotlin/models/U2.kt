@@ -9,12 +9,14 @@ class U2(
         cost: Int = 120,
         weight: Int = 18,
         maxWeight: Int = 29,
+        itemsList: ArrayList<Item> = arrayListOf(),
         chanceLaunchExplosion: Float? = null,
         chanceLandingCrash: Float? = null,
     ): Rocket(
         cost,
         weight,
         maxWeight,
+        itemsList,
         chanceLaunchExplosion,
         chanceLandingCrash
     ) {

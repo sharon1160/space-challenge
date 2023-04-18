@@ -1,20 +1,23 @@
 package models
 
+import java.util.ArrayList
 import java.util.Random
 
 /**
  * This class represents the U-1 Rocket.
  */
 class U1(
-        cost: Int = 100,
-        weight: Int = 10,
-        maxWeight: Int = 18,
-        chanceLaunchExplosion: Float? = null,
-        chanceLandingCrash: Float? = null,
+    cost: Int = 100,
+    weight: Int = 10,
+    maxWeight: Int = 18,
+    itemsList: ArrayList<Item> = arrayListOf(),
+    chanceLaunchExplosion: Float? = null,
+    chanceLandingCrash: Float? = null,
     ): Rocket(
         cost,
         weight,
         maxWeight,
+        itemsList,
         chanceLaunchExplosion,
         chanceLandingCrash
     ) {
