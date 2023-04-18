@@ -26,7 +26,7 @@ class U1(
      */
     override fun launch(): Boolean {
         // probability equation
-        chanceLaunchExplosion = 0.05f * (weight/maxWeight)
+        chanceLaunchExplosion = 0.05f * (weight/maxWeight) * 100
 
         // random number between 1 and 100
         val randomNumber = Random().nextInt(100) + 1
@@ -48,7 +48,7 @@ class U1(
      */
     override fun land(): Boolean {
         // probability equation
-        chanceLandingCrash = 0.01f * (weight/maxWeight)
+        chanceLandingCrash = 0.01f * (weight/maxWeight) * 100
 
         // random number between 1 and 100
         val randomNumber = Random().nextInt(100) + 1
