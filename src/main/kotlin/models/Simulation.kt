@@ -38,7 +38,7 @@ class Simulation {
 
         do {
             val rocket = U1()
-            for (i in pos..(totalItems - 1)) {
+            for (i in pos until totalItems) {
 
                 // When can carry
                 if (rocket.canCarry(itemsList[i])) {
@@ -81,7 +81,7 @@ class Simulation {
         do {
             val rocket = U2()
 
-            for (i in pos..(totalItems - 1)) {
+            for (i in pos until totalItems) {
 
                 // When can carry
                 if (rocket.canCarry(itemsList[i])) {
