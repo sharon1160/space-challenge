@@ -14,4 +14,8 @@ The mission is to send a list of items (habitats, bunkers, food supplies, and ro
 - IntelliJ IDEA
 - JDK
 
+## Screenshots
 
+![screenshot1](https://github.com/sharon1160/space-challenge/blob/develop/src/main/resources/screenshot1.jpeg)
+![screenshot2](https://github.com/sharon1160/space-challenge/blob/develop/src/main/resources/screenshot2.jpeg)
+![screenshot3](https://github.com/sharon1160/space-challenge/blob/develop/src/main/resources/screenshot3.jpeg)
