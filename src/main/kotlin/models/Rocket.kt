@@ -10,6 +10,8 @@ open class Rocket(
         val cost: Int,
         var weight: Int,
         val maxWeight: Int,
+        var currentLoad: Int,
+        val maxLoad: Int,
         val itemsList: ArrayList<Item>,
         var chanceLaunchExplosion: Float? = null,
         var chanceLandingCrash: Float? = null,
@@ -24,11 +26,11 @@ open class Rocket(
     }
 
     override fun canCarry(item: Item): Boolean {
-        return (weight + item.weight) <= maxWeight
+        return (currentLoad + item.weight) <= maxLoad
     }
 
     override fun carry(item: Item) {
-        weight += item.weight
+        currentLoad += item.weight
         itemsList.add(item)
     }
 }
