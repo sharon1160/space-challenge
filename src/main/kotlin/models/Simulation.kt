@@ -37,7 +37,10 @@ class Simulation {
         var pos = 0
 
         do {
+            // Generating rockets
             val rocket = U1()
+
+            // Iterating over the list of items
             for (i in pos until totalItems) {
 
                 // When can carry
@@ -47,25 +50,12 @@ class Simulation {
                 }
                 // When can't carry
                 else{
-                    // If it's full
-                    if (rocket.weight == rocket.maxWeight) {
-                        pos = i
-                        break
-                    }
-                    // If it's not full
-                    else if (rocket.weight < rocket.maxWeight) {
-                        val difference = rocket.maxWeight - rocket.weight
-                        val partialItem = Item(itemsList[i].name, difference)
-                        rocket.carry(partialItem)
-                        itemsList[i].decreaseWeight(difference)
-                        pos = i
-                        break
-                    }
+                    pos = i
+                    break
                 }
             }
-            if (rocket.weight == rocket.maxWeight) {
-                u1Rockets.add(rocket)
-            }
+
+            u1Rockets.add(rocket)
         } while (pos + 1 < totalItems)
 
         return u1Rockets
@@ -80,8 +70,10 @@ class Simulation {
         var pos = 0
 
         do {
+            // Generating rockets
             val rocket = U2()
 
+            // Iterating over the list of items
             for (i in pos until totalItems) {
 
                 // When can carry
@@ -91,25 +83,11 @@ class Simulation {
                 }
                 // When can't carry
                 else{
-                    // If it's full
-                    if (rocket.weight == rocket.maxWeight) {
-                        pos = i
-                        break
-                    }
-                    // When it's not full
-                    else if (rocket.weight < rocket.maxWeight) {
-                        val difference = rocket.maxWeight - rocket.weight
-                        val partialItem = Item(itemsList[i].name, difference)
-                        rocket.carry(partialItem)
-                        itemsList[i].decreaseWeight(difference)
-                        pos = i
-                        break
-                    }
+                    pos = i
+                    break
                 }
             }
-            if (rocket.weight == rocket.maxWeight) {
-                u2Rockets.add(rocket)
-            }
+            u2Rockets.add(rocket)
         } while (pos + 1 < totalItems)
 
         return u2Rockets
