@@ -10,7 +10,7 @@ class Main {
     fun <T : Rocket> printFleet(fleet: ArrayList<T>) {
         var i = 1
         for (rocket: T in fleet) {
-            println("Rocket #$i")
+            println("Rocket #$i -> ${rocket.maxLoad}")
             var j = 1
             for (item: Item in rocket.itemsList) {
                 println("Item #$j name: ${item.name}")
