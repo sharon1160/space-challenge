@@ -36,7 +36,6 @@ out/
 .idea/sonarlint/
 
 ### Intellij Patch ###
-*.iml
 .idea/misc.xml
 
 # Cache file creation bug
