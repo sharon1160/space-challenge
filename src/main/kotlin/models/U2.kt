@@ -9,6 +9,8 @@ class U2(
         cost: Int = 120,
         weight: Int = 18,
         maxWeight: Int = 29,
+        currentLoad: Int = 0,
+        maxLoad: Int = maxWeight - weight,
         itemsList: ArrayList<Item> = arrayListOf(),
         chanceLaunchExplosion: Float? = null,
         chanceLandingCrash: Float? = null,
@@ -16,6 +18,8 @@ class U2(
         cost,
         weight,
         maxWeight,
+        currentLoad,
+        maxLoad,
         itemsList,
         chanceLaunchExplosion,
         chanceLandingCrash
@@ -28,10 +32,10 @@ class U2(
      */
     override fun launch(): Boolean {
         // probability equation
-        chanceLaunchExplosion = 0.04f * (weight/maxWeight) * 100
+        chanceLaunchExplosion = 0.04f * (currentLoad.toFloat()/maxLoad.toFloat()) * 100
 
         // random number between 1 and 100
-        val randomNumber = Random().nextInt(100) + 1
+        val randomNumber = Random().nextFloat(100.0f) + 1.0f
 
         // True if the launch was successful
         // otherwise, False
@@ -50,10 +54,10 @@ class U2(
      */
     override fun land(): Boolean {
         // probability equation
-        chanceLandingCrash = 0.08f * (weight/maxWeight) * 100
+        chanceLandingCrash = 0.08f * (currentLoad.toFloat()/maxLoad.toFloat()) * 100
 
         // random number between 1 and 100
-        val randomNumber = Random().nextInt(100) + 1
+        val randomNumber = Random().nextFloat(100.0f) + 1.0f
 
         // True if the landing was successful
         // otherwise, False
